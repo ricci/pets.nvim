@@ -8,9 +8,9 @@ function M.listdir(directory, suppress)
     local i, t, popen = 0, {}, io.popen
     local pfile
     if suppress then
-        pfile = popen('/bin/ls -a "' .. directory .. '" 2>/dev/null')
+        pfile = popen('ls -a "' .. directory .. '" 2>/dev/null')
     else
-        pfile = popen('/bin/ls -a "' .. directory .. '"')
+        pfile = popen('ls -a "' .. directory .. '"')
     end
     if pfile == nil then
         error("Error getting assets for specified pet")
